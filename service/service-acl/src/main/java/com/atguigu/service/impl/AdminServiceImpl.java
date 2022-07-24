@@ -2,7 +2,6 @@ package com.atguigu.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.atguigu.base.BaseDao;
-import com.atguigu.base.BaseService;
 import com.atguigu.base.BaseServiceImpl;
 import com.atguigu.dao.AdminDao;
 import com.atguigu.entity.Admin;
@@ -16,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Service(interfaceClass = AdminService.class)
-public class AdminServiceImpl extends BaseServiceImpl<Admin> implements BaseService<Admin> {
+public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminService {
 
     @Autowired
     private AdminDao adminDao;
