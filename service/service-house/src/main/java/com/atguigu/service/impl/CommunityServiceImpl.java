@@ -50,4 +50,9 @@ public class CommunityServiceImpl extends BaseServiceImpl<Community> implements 
         //封装数据并返回
         return new PageInfo<>(page,10);
     }
+
+    @Override
+    public List<Community> findAll() {
+        return communityDao.findAll();
+    }
 }

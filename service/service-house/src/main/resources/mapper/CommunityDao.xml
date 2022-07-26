@@ -147,5 +147,6 @@
         <include refid="columns"></include>
         from hse_community
         where is_deleted = 0
+        order by id desc
     </select>
 </mapper>

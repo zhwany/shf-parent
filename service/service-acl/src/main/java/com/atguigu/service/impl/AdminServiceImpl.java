@@ -9,6 +9,8 @@ import com.atguigu.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @Author mabo
  * @Date 2022/7/19 23:18
@@ -25,4 +27,8 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
         return adminDao;
     }
 
+    @Override
+    public List<Admin> findAll() {
+        return adminDao.findAll();
+    }
 }
