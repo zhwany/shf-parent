@@ -15,8 +15,8 @@ import com.qiniu.util.Auth;
  */
 public class QiniuUtil {
 
-    public static String accessKey = "-Vmx42PzEu962rE10zn6CSQXgCFonh3vvWJawvYq";
-    public static String secretKey = "p4dj4_hIuqixc6zYR5VYNvXQKbWXdSZwmAbOnbA-";
+    public static String accessKey = "Daj7R9HqW7o2AlxTnMl47i3vinv0JGGU_lGdKULV";
+    public static String secretKey = "j_PBo8EWXcawttTifY4F1-VrgYmFflfSvjNSdp8O";
     public static String bucket = "maboatguigu";
 
     public static void upload2Qiniu(String filePath,String fileName){
