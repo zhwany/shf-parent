@@ -15,13 +15,13 @@ import com.qiniu.util.Auth;
  */
 public class QiniuUtil {
 
-    public  static String accessKey = "BrrMVEQCE6ijrnHX-gGDVVk3e0vY8mAQQEyB_Zzq";
-    public  static String secretKey = "uaJNMOUGSkZqb3xce-gv4Y-2f0f5_X5VQO-v4lL0";
-    public  static String bucket = "sfh888";
+    public static String accessKey = "-Vmx42PzEu962rE10zn6CSQXgCFonh3vvWJawvYq";
+    public static String secretKey = "p4dj4_hIuqixc6zYR5VYNvXQKbWXdSZwmAbOnbA-";
+    public static String bucket = "maboatguigu";
 
     public static void upload2Qiniu(String filePath,String fileName){
         //构造一个带指定Zone对象的配置类
-        Configuration cfg = new Configuration(Zone.zone2());
+        Configuration cfg = new Configuration(Zone.autoZone());
         UploadManager uploadManager = new UploadManager(cfg);
         Auth auth = Auth.create(accessKey, secretKey);
         String upToken = auth.uploadToken(bucket);
@@ -42,7 +42,7 @@ public class QiniuUtil {
     //上传文件
     public static void upload2Qiniu(byte[] bytes, String fileName){
         //构造一个带指定Zone对象的配置类
-        Configuration cfg = new Configuration(Zone.zone2());
+        Configuration cfg = new Configuration(Zone.autoZone());
         //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
 
@@ -70,7 +70,7 @@ public class QiniuUtil {
     //删除文件
     public static void deleteFileFromQiniu(String fileName){
         //构造一个带指定Zone对象的配置类
-        Configuration cfg = new Configuration(Zone.zone2());
+        Configuration cfg = new Configuration(Zone.autoZone());
         String key = fileName;
         Auth auth = Auth.create(accessKey, secretKey);
         BucketManager bucketManager = new BucketManager(auth, cfg);
