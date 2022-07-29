@@ -48,7 +48,7 @@ public class DictController extends BaseController {
      * @param parentId
      * @return
      */
-    @GetMapping(value = "findListByParentId/{parentId}")
+    @GetMapping(value = "/findListByParentId/{parentId}")
     @ResponseBody
     public Result<List<Dict>> findListByParentId(@PathVariable Long parentId) {
         List<Dict> list = dictService.findListByParentId(parentId);
@@ -60,7 +60,7 @@ public class DictController extends BaseController {
      * @param dictCode
      * @return
      */
-    @GetMapping(value = "findListByDictCode/{dictCode}")
+    @GetMapping(value = "/findListByDictCode/{dictCode}")
     @ResponseBody
     public Result<List<Dict>> findListByDictCode(@PathVariable String dictCode) {
         List<Dict> list = dictService.findListByDictCode(dictCode);

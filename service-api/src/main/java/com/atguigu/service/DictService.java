@@ -1,5 +1,6 @@
 package com.atguigu.service;
 
+import com.atguigu.base.BaseService;
 import com.atguigu.entity.Dict;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Map;
  * @Author mabo
  * @Date 2022/7/24 22:47
  */
-public interface DictService {
+public interface DictService extends BaseService<Dict> {
     /**
      * 查询指定id的下级元素
      * @param id   字典项id
