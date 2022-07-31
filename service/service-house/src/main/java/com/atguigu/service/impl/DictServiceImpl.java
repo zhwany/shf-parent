@@ -74,4 +74,9 @@ public class DictServiceImpl extends BaseServiceImpl<Dict> implements DictServic
         List<Dict> dictList = dictDao.findListByParentId(parentId);
         return dictList;
     }
+
+    @Override
+    public String getNameById(Long houseTypeId) {
+        return dictDao.getNameById(houseTypeId);
+    }
 }

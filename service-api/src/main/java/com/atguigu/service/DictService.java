@@ -26,4 +26,6 @@ public interface DictService extends BaseService<Dict> {
     List<Dict> findListByDictCode(String dictCode);
 
     List<Dict> findListByParentId(Long parentId);
+
+    String getNameById(Long houseTypeId);
 }

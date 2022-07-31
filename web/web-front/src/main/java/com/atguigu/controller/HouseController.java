@@ -1,10 +1,7 @@
 package com.atguigu.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.atguigu.entity.Community;
-import com.atguigu.entity.House;
-import com.atguigu.entity.HouseBroker;
-import com.atguigu.entity.HouseImage;
+import com.atguigu.entity.*;
 import com.atguigu.result.Result;
 import com.atguigu.service.*;
 import com.atguigu.vo.HouseQueryVo;
@@ -34,6 +31,8 @@ public class HouseController {
     private HouseImageService houseImageService;
     @Reference
     private HouseBrokerService houseBrokerService;
+    @Reference
+    private UserFollowService userFollowService;
 
     @PostMapping(value = "/list/{pageNum}/{pageSize}")
     public Result findListPage(@RequestBody HouseQueryVo houseQueryVo,
@@ -58,6 +57,14 @@ public class HouseController {
         map.put("houseImage1List", houseImageList);
 
         map.put("isFollow", false);
+
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("user");
+        Boolean isFollow = false;
+        if (null != userInfo) {
+            Long userId = userInfo.getId();
+            isFollow = userFollowService.isFollowed(userId, id);
+        }
+        map.put("isFollow", isFollow);
 
         return Result.ok(map);
     }

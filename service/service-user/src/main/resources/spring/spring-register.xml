@@ -15,4 +15,6 @@
     <!--批量扫描，发布服务-->
     <dubbo:annotation package="com.atguigu.service"/>
 
+    <dubbo:consumer check="false"></dubbo:consumer>
+
 </beans>
