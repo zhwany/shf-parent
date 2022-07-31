@@ -95,7 +95,7 @@ public class UserInfoController extends BaseController {
             return Result.build(null, ResultCodeEnum.ACCOUNT_LOCK_ERROR);
         }
         //5、校验成功，返回ok，将此时登录的用户昵称传回给页面
-        //登录失败后页面登录信息的回显
+        //不仅用于登录失败后页面登录信息的回显, 还用于前端所有界面关于当前登录用户id的查询, 关注房源时用于拦截器校验用户是否登录
         request.getSession().setAttribute("USER", userInfo);
         //登录成功后携带用户名，用于在前端首页的展示
         Map map = new HashMap<>();
