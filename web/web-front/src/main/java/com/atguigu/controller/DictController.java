@@ -33,9 +33,5 @@ public class DictController {
         List<Dict> dictList = this.dictService.findListByParentId(parentId);
         return Result.ok(dictList);
     }
-
-    public static void main(String[] args) {
-
-    }
 }
 
